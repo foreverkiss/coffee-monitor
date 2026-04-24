@@ -2,12 +2,12 @@ name: Coffee Monitor
 
 on:
   schedule:
-    - cron: "0 1 * * *"   # 北京时间 09:00
-    - cron: "0 6 * * *"   # 14:00
-    - cron: "0 12 * * *"  # 20:00
-    - cron: "0 16 * * *"  # 00:00
+    - cron: "0 1 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 16 * * *"
 
-  workflow_dispatch:  # 手动运行
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # ⭐ 升级
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5   # ⭐ 升级
         with:
           python-version: "3.11"
 
